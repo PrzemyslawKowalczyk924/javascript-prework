@@ -1,7 +1,7 @@
 /*ComputerMove*/
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 
-console.log('Wylosowana liczba to: ' + randomNumber);
+console.log('Komputer wylosował liczbę ' + randomNumber);
 
 let computerMove = 'nieznany ruch';
 
@@ -18,13 +18,13 @@ else {
 		}
 	}
 }
-console.log('Komputer wylosował ' + computerMove);
+console.log('Liczba ' + randomNumber + ' to '  + computerMove);
 
 /*PlayerMove*/
 
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
-console.log('Gracz wpisał: ' + playerInput);
+console.log('Gracz wpisał liczbę: ' + playerInput);
 
 let playerMove = 'nieznany ruch';
 
@@ -39,10 +39,49 @@ else {
     playerMove = 'nożyce';
 }
 }
-console.log('Wybrałem ' + playerMove)
+console.log('Liczba ' + playerInput + ' to ' + playerMove);
+console.log('Komputer - ' + computerMove + ', ' + 'Gracz - ' + playerMove);
 
 /*Game score*/
 
-if( computerMove == 'kamień' && playerMove == 'papier'){
-	printMessage('Ty wygrywasz!');
+if(computerMove == 'kamień' && playerMove == 'kamień'){
+	printMessage('Remis');
   }
+  else {
+	  if(computerMove == 'papier' && playerMove == 'papier'){
+		  printMessage('Remis')
+	  }
+	  else {
+		if(computerMove == 'nożyce' && playerMove == 'nożyce'){
+			printMessage('Remis')
+		}
+	}
+  }
+  if(computerMove == 'kamień' && playerMove == 'papier'){
+	  printMessage('Wygrywasz!');
+  }
+  else {
+	  if(computerMove == 'kamień' && playerMove == 'nożyce'){
+		  printMessage('Przegrywasz!');
+	  }
+  }
+  if(computerMove == 'papier' && playerMove == 'kamień'){
+	  printMessage('Przegrywasz!');
+  }
+  else {
+	  if(computerMove == 'papier' && playerMove == 'nożyce'){
+		  printMessage('Wygrywasz!');
+	  }
+  }
+  if(computerMove == 'nożyce' && playerMove == 'kamień'){
+	  printMessage('Wygrywasz!');
+  }
+  else {
+	  if(computerMove == 'nożyce' && playerMove == 'papier'){
+		  printMessage('Przegrywasz!');
+	  }
+  }
+  if(playerInput != '1' && playerInput != '2' && playerInput != '3'){
+	  printMessage('Podałeś niepoprawną komendę.');
+  }
+  
