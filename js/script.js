@@ -2,7 +2,7 @@
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 
 console.log('Wylosowana liczba to: ' + randomNumber);
-//printMessage('wylosowana liczba to' + randomNumber);
+
 let computerMove = 'nieznany ruch';
 
 if(randomNumber == 1){
@@ -19,9 +19,6 @@ else {
 	}
 }
 console.log('Komputer wylosował ' + computerMove);
-
-//printMessage('Mój ruch to: ' + computerMove);
-
 
 /*PlayerMove*/
 
@@ -44,4 +41,8 @@ else {
 }
 console.log('Wybrałem ' + playerMove)
 
-//printMessage('Twój ruch to: ' + playerMove);
+/*Game score*/
+
+if( computerMove == 'kamień' && playerMove == 'papier'){
+	printMessage('Ty wygrywasz!');
+  }
