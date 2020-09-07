@@ -70,8 +70,9 @@ function displayResult(argComputerMove, argPlayerMove){
 			printMessage('Wygrałeś!');
 		}
 	}
-  }
-
+  
+}
+  
 function printMessage(msg){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
