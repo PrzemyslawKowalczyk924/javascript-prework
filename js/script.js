@@ -1,87 +1,19 @@
 /*ComputerMove*/
 let randomNumber = Math.floor(Math.random() * 3 + 1);
-
 console.log('Komputer wylosował liczbę ' + randomNumber);
 
-let computerMove = 'nieznany ruch';
-
-if(randomNumber == 1){
-  computerMove = 'kamień';
-}
-else {
-	if(randomNumber == 2) {
-		computerMove = 'papier';
-	}
-	else {
-		if(randomNumber == 3) {
-			computerMove = 'nożyce';
-		}
-	}
-}
+let computerMove = getMoveName(randomNumber);
 console.log('Liczba ' + randomNumber + ' to '  + computerMove);
 
 /*PlayerMove*/
 
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-
 console.log('Gracz wpisał liczbę: ' + playerInput);
 
-let playerMove = 'nieznany ruch';
-
-if(playerInput == '1'){
-  playerMove = 'kamień';
-}
-else {
-  if(playerInput == '2')
-    playerMove = 'papier';
-else {
-  if(playerInput == '3')
-    playerMove = 'nożyce';
-}
-}
+let playerMove = getMoveName(playerInput);
 console.log('Liczba ' + playerInput + ' to ' + playerMove);
-console.log('Komputer - ' + computerMove + ', ' + 'Gracz - ' + playerMove);
 
 /*Game score*/
-
-if(computerMove == 'kamień' && playerMove == 'kamień'){
-	printMessage('Remis');
-  }
-  else {
-	  if(computerMove == 'papier' && playerMove == 'papier'){
-		  printMessage('Remis')
-	  }
-	  else {
-		if(computerMove == 'nożyce' && playerMove == 'nożyce'){
-			printMessage('Remis')
-		}
-	}
-  }
-  if(computerMove == 'kamień' && playerMove == 'papier'){
-	  printMessage('Wygrywasz!');
-  }
-  else {
-	  if(computerMove == 'kamień' && playerMove == 'nożyce'){
-		  printMessage('Przegrywasz!');
-	  }
-  }
-  if(computerMove == 'papier' && playerMove == 'kamień'){
-	  printMessage('Przegrywasz!');
-  }
-  else {
-	  if(computerMove == 'papier' && playerMove == 'nożyce'){
-		  printMessage('Wygrywasz!');
-	  }
-  }
-  if(computerMove == 'nożyce' && playerMove == 'kamień'){
-	  printMessage('Wygrywasz!');
-  }
-  else {
-	  if(computerMove == 'nożyce' && playerMove == 'papier'){
-		  printMessage('Przegrywasz!');
-	  }
-  }
-  if(playerInput != '1' && playerInput != '2' && playerInput != '3'){
-	  printMessage('Podałeś niepoprawną komendę.');
-  }
+console.log('Komputer - ' + computerMove + ', ' + 'Gracz - ' + playerMove);
+displayResult(computerMove, playerMove);
   
