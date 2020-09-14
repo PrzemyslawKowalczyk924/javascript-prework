@@ -1,11 +1,11 @@
-function getMoveName (argMoveId) {
-	if(argMoveId == 1){
+function getMoveName(argMoveId) {
+	if (argMoveId == 1) {
 		return 'kamień';
 	}
-	else if(argMoveId == 2){
+	else if (argMoveId == 2) {
 		return 'papier';
 	}
-	else if(argMoveId == 3){
+	else if (argMoveId == 3) {
 		return 'nożyce';
 	}
 	else {
@@ -15,37 +15,41 @@ function getMoveName (argMoveId) {
 }
 
 /*show score -function*/
-function displayResult(argComputerMove, argPlayerMove){
+function displayResult(argComputerMove, argPlayerMove) {
 	printMessage('Komputer wylosował: ' + argComputerMove + ', a Ty wylosowałeś: ' + argPlayerMove + '.');
 
-if(argComputerMove == argPlayerMove){
-	console.log('Wynik: ' + argComputerMove + ' = ' + argPlayerMove);
-	printMessage('Remis!');
-}
-else if(argPlayerMove == 'kamień' && argComputerMove == 'nożyce'){
-	console.log('Wynik: ' + argComputerMove + ' < ' + argPlayerMove);
-	printMessage('Wygrałeś!');
-}
-else if(argPlayerMove == 'papier' && argComputerMove == 'kamień'){
-	console.log('Wynik: ' + argComputerMove + ' < ' + argPlayerMove);
-	printMessage('Wygrałeś!');
-}
-else if(argPlayerMove == 'nożyce' && argComputerMove == 'papier'){
-	console.log('Wynik: ' + argComputerMove + ' < ' + argPlayerMove);
-	printMessage('Wygrałeś!');
-}
-else {
+	if (argComputerMove == argPlayerMove) {
+		console.log('Wynik: ' + argComputerMove + ' = ' + argPlayerMove);
+		printMessage('Remis!');
+		return 0;
+	} else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
+		console.log('Wynik: ' + argComputerMove + ' < ' + argPlayerMove);
+		printMessage('Wygrałeś!');
+		return 2;
+	} else if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+		console.log('Wynik: ' + argComputerMove + ' < ' + argPlayerMove);
+		printMessage('Wygrałeś!');
+		return 2;
+	} else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
+		console.log('Wynik: ' + argComputerMove + ' < ' + argPlayerMove);
+		printMessage('Wygrałeś!');
+		return 2;
+	}
+
 	console.log('Wynik: ' + argComputerMove + ' > ' + argPlayerMove);
-	printMessage('Przegrałeś!')};
+	printMessage('Przegrałeś!')
+	return 1;
 }
-  
-function printMessage(msg){
+
+function printMessage(msg) {
 	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-function clearMessages(){
+function clearMessages() {
 	document.getElementById('messages').innerHTML = '';
 }
+
+
 
